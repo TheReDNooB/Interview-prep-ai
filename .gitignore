@@ -1,0 +1,57 @@
+# Node.js and Express
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn.lock
+package-lock.json
+
+# React (Frontend)
+/build/
+/dist/
+/.cache/
+/public/build/
+/public/dist/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Logs and Debugging
+*.log
+logs/
+*.pid
+
+# Dependency directories
+jspm_packages/
+typings/
+
+# Optional npm cache directory
+.npm/
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Editor directories and files
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Testing and Coverage
+/coverage/
+/.nyc_output/
+
+# MongoDB
+*.db
+*.bson
+*.json (if used for database dumps)
+
+# Other temporary files
+*.tmp
+*.swp
+*~
