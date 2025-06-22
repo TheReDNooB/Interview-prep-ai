@@ -60,6 +60,14 @@ const LandingPage = () => {
             </div>
           </div>
       </div>
+
+      <div className="w-full min-h-full relative z-10 mb-56">
+        <div>
+          <section className="flex items-center justify-center mt-36">
+             <img src={HERO_IMG} alt="Hero Image" className="w-[80vw] rounded-lg"/>
+          </section>
+        </div>
+      </div>
     </>
   );
 };
