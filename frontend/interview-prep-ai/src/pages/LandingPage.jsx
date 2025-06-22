@@ -13,7 +13,49 @@ const LandingPage = () => {
   const handleCTA = () => {};
 
   return (
-    <div>LandingPage</div>
+    <div className="">
+      <div className=""/>
+        <div className="">
+          {/* Header */}
+          <header className="">
+            <div className="">
+              Interview Prep AI
+            </div>
+            <button className="" onClick={() => setOpenAuthModal(true)}>
+              Login / SignUp
+            </button>
+          </header>
+          {/* Hero Content */}
+          <div className="">
+            <div className="">
+              <div className="">
+                <div className="">
+                  AI Powered
+                </div>
+              </div>
+              <h1 className="">
+                Ace Interview with <br/>
+                <span className="">
+                  AI-Powered
+                </span>{" "}
+                Learning
+              </h1>
+            </div>
+
+            <div className="">
+              <p className="">
+                Get role specifi questions, expand answers when you need them,
+                dive deeper into concepts, and organize everything in you way.
+                From preparation from to mastery - your ultimate interview toolkit
+                is here.
+              </p>
+              <button className="" onClick={handleCTA}>
+                Get started
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
   )
 }
 
