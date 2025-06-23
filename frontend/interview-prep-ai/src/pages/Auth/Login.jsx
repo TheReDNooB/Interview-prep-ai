@@ -25,8 +25,17 @@ const Login = ({ setCurrentPage }) => {
         onChange={({ target }) => setEmail(target.value)}
         label="Email Address"
         placeholder="hello@example.com"
-        type="text"        
+        type="text"
       />
+
+      <Input
+        value={password}
+        onChange={({ target }) => setPassword(target.value)}
+        label="Password"
+        placeholder="Min 8 Characters"
+        type="password"
+      />
+
     </form>
   </div>
 };
