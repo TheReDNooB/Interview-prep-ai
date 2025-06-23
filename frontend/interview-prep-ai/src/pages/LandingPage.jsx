@@ -68,10 +68,10 @@ const LandingPage = () => {
           </section>
         </div>
 
-        <div className="">
-          <div className="">
-            <section className="">
-              <h2 className="">
+        <div className="w-full min-h-full bg-[#fffcef] mt-10">
+          <div className="container mx-auto px-4 pt-10 pb-20">
+            <section className="mt-5">
+              <h2 className="text-2xl font-medium text-center mb-12">
                 Features That Make You Shine
               </h2>
 
