@@ -67,6 +67,49 @@ const LandingPage = () => {
              <img src={HERO_IMG} alt="Hero Image" className="w-[80vw] rounded-lg"/>
           </section>
         </div>
+
+        <div className="">
+          <div className="">
+            <section className="">
+              <h2 className="">
+                Features That Make You Shine
+              </h2>
+
+              <div className="">
+                {/* First 3 cards */}
+                <div className="">
+                  {APP_FEATURES.slice(0,3).map((feature) => (
+                    <div
+                    key={feature.id}
+                    className=""
+                    >
+                      <h3 className="">
+                        {feature.title}
+                      </h3>
+                      <p className="">{feature.description}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Remainig 2 cards */}
+                <div className="">
+                  {APP_FEATURES.slice(3).map((feature) => (
+                    <div
+                    key={feature.id}
+                    className=""
+                    >
+                      <h3 className="">
+                        {feature.title}
+                      </h3>
+                      <p className="">{feature.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
       </div>
     </>
   );
