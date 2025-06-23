@@ -32,6 +32,11 @@ const Dashboard = ({ children, isOpen, onClose, title, hideHeader }) => {
         />
       </svg>
     </button>
+
+    {/* Modal Body Scrollable */}
+    <div className="">
+      {children}
+    </div>
     </div>
   </div>
 }
