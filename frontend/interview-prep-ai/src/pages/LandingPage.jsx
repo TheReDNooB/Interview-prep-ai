@@ -4,6 +4,7 @@ import HERO_IMG from "../assets/hero-test.png";
 import { APP_FEATURES } from "../utils/data";
 import { useNavigate } from "react-router-dom";
 import { LuSparkles } from 'react-icons/lu'
+import { Modal } from '../components/Modal'
 
 const LandingPage = () => {
 
@@ -113,12 +114,12 @@ const LandingPage = () => {
       </div>
 
       <Modal
-      isOpen={openAuthModal}
-      onClose={() => {
-        setOpenAuthModal(false);
-        setCurrentPage("login");
-      }}
-      hideHeader
+        isOpen={openAuthModal}
+        onClose={() => {
+          setOpenAuthModal(false);
+          setCurrentPage("login");
+        }}
+        hideHeader
       >
         <div>
           {currentPage === "login" && (
