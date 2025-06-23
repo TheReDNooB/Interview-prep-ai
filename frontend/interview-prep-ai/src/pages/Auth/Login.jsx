@@ -13,12 +13,20 @@ const Login = ({ setCurrentPage }) => {
     e.preventDefault();
   };
 
-  return <div className="">
-    <h3 className="">Welcome back</h3>
-    <p className=""> Please enter your details to log in</p>
+  return <div className="w-[90vw] md:w-[33vw] p-7 flex flex-col justify-center">
+    <h3 className="text-lg font-semibold text-black">Welcome back</h3>
+    <p className="text-xs text-slate-700 mt-[5px] mb-6">
+      Please enter your details to log in
+    </p>
 
     <form onSubmit={handleLogin}>
-      
+      <Input
+        value={email}
+        onChange={({ target }) => setEmail(target.value)}
+        label="Email Address"
+        placeholder="hello@example.com"
+        type="text"        
+      />
     </form>
   </div>
 };
