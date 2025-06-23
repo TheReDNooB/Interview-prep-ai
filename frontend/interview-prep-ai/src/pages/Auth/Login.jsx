@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Input from '../../components/Inputs/Input'
 
 const Login = ({ setCurrentPage }) => {
   const [email, setEmail] = useState("");
