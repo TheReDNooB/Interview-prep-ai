@@ -61,7 +61,7 @@ const LandingPage = () => {
           </div>
       </div>
 
-      <div className="w-full min-h-full relative z-10 mb-56">
+      <div className="w-full min-h-full relative z-10">
         <div>
           <section className="flex items-center justify-center mt-36">
              <img src={HERO_IMG} alt="Hero Image" className="w-[80vw] rounded-lg"/>
@@ -91,17 +91,17 @@ const LandingPage = () => {
                   ))}
                 </div>
 
-                {/* Remainig 2 cards */}
-                <div className="">
+                {/* Remaining 2 cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {APP_FEATURES.slice(3).map((feature) => (
                     <div
                     key={feature.id}
-                    className=""
+                    className="bg-[#fffef8] p-6 rounded-xl shadow-xs hover:shadow-lg transition border border-amber-100"
                     >
-                      <h3 className="">
+                      <h3 className="text-base font-semibold mb-3">
                         {feature.title}
                       </h3>
-                      <p className="">{feature.description}</p>
+                      <p className="text-gray-600">{feature.description}</p>
                     </div>
                   ))}
                 </div>
