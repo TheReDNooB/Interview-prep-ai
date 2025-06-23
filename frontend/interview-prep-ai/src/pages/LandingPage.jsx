@@ -75,18 +75,18 @@ const LandingPage = () => {
                 Features That Make You Shine
               </h2>
 
-              <div className="">
+              <div className="flex flex-col items-center gap-8">
                 {/* First 3 cards */}
-                <div className="">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
                   {APP_FEATURES.slice(0,3).map((feature) => (
                     <div
                     key={feature.id}
-                    className=""
+                    className="bg-[#fffef8] p-6 rounded-xl shadow-xs hover:shadow-lg transition border border-amber-100"
                     >
-                      <h3 className="">
+                      <h3 className="text-base font-semibold mb-3">
                         {feature.title}
                       </h3>
-                      <p className="">{feature.description}</p>
+                      <p className="text-gray-600">{feature.description}</p>
                     </div>
                   ))}
                 </div>
