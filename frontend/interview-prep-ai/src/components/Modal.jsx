@@ -1,7 +1,7 @@
 import React from "react";
 
 const Dashboard = ({ children, isOpen, onClose, title, hideHeader }) => {
-  return <div className="fixed inset-0 flex justify-center items-center w-full h-full bg-black/40">
+  return <div className="fixed inset-0 z-50 flex justify-center items-center w-full h-full bg-black/40">
     {/* Modal Content */}
     <div className={`relative flex flex-col bg-white shadow-lg rounded-lg overflow-hidden`}>
     {/* Modal Header */}
@@ -34,11 +34,11 @@ const Dashboard = ({ children, isOpen, onClose, title, hideHeader }) => {
     </button>
 
       {/* Modal Body Scrollable */}
-      <div className="text-1 overflow-y-auto custom-scrollbar">
+      <div className="flex-1 overflow-y-auto custom-scrollbar">
         {children}
       </div>
     </div>
   </div>
-}
+};
 
 export default Dashboard;
