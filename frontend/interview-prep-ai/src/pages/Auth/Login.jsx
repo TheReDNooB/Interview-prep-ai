@@ -37,15 +37,15 @@ const Login = ({ setCurrentPage }) => {
         type="password"
       />
 
-      {error && <p className="">{error}</p>}
-      <button type="submit" className="">
+      {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}
+      <button type="submit" className="btn-primary">
         Login
       </button>
 
-      <p className="">
+      <p className="text-[13px] text-slate-800 mt-3">
         Don't have an account?{" "}
         <button 
-        className=""
+        className="font-medium text-primary underline cursor-pointer"
         onClick={() => {
           setCurrentPage("signup");
         }}>
