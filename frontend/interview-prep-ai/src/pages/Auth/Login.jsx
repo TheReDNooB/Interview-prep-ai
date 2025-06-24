@@ -37,6 +37,22 @@ const Login = ({ setCurrentPage }) => {
         type="password"
       />
 
+      {error && <p className="">{error}</p>}
+      <button type="submit" className="">
+        Login
+      </button>
+
+      <p className="">
+        Don't have an account?{" "}
+        <button 
+        className=""
+        onClick={() => {
+          setCurrentPage("signup");
+        }}>
+          SignUp
+        </button>
+      </p>
+
     </form>
   </div>
 };
