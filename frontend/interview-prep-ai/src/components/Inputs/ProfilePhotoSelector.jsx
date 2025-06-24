@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { LuUser, LuUpload, LuTrash } from "react-icons/lu";
+import Input from '../../components/Inputs/Input'
 
 const ProfilePhotoSelector = ({ image, setImage, preview, setPreview }) => {
   
@@ -32,7 +33,43 @@ const ProfilePhotoSelector = ({ image, setImage, preview, setPreview }) => {
     inputRef.current.click();
   }
   
-  return <div>ProfilePhotoSelector</div>;
+  return <div className="">
+    <Input
+      type="file"
+      accept="image/*"
+      ref={inputRef}
+      onChange={handleImageChange}
+      className=""
+    />
+
+    {!image ? (
+      <div className="">
+        <LuUser className="" />
+        <button
+        type="button"
+        className=""
+        onClick={onChooseImage}
+        >
+          <LuUpload/>
+        </button>
+      </div>
+    ) : (
+      <div className="">
+        <img
+        src={preview || previewUrl}
+        alt="profile photo"
+        className=""
+        />
+        <button
+        type="button"
+        className=""
+        onClick={handleRemoveImage}
+        >
+          <LuTrash/>
+        </button>
+      </div>
+    )}
+  </div>
 };
 
 export default ProfilePhotoSelector;
