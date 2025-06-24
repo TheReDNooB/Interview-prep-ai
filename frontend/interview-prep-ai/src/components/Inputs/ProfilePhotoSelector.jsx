@@ -33,36 +33,36 @@ const ProfilePhotoSelector = ({ image, setImage, preview, setPreview }) => {
     inputRef.current.click();
   }
   
-  return <div className="">
+  return <div className="flex justify-center mb-6">
     <Input
       type="file"
       accept="image/*"
       ref={inputRef}
       onChange={handleImageChange}
-      className=""
+      className="hidden"
     />
 
     {!image ? (
-      <div className="">
-        <LuUser className="" />
+      <div className="w-20 h-20 flex items-center justify-center bg-orange-50 rounded-full relative cursor-pointer">
+        <LuUser className="text-4xl text-orange-500" />
         <button
         type="button"
-        className=""
+        className="w-8 h-8 flex items-center justify-center bg-linear-to-r from-orange-500/85 to-orange-600 text-white rounded-full absolute -bottom-1 -right-1 cursor-pointer"
         onClick={onChooseImage}
         >
           <LuUpload/>
         </button>
       </div>
     ) : (
-      <div className="">
+      <div className="relative">
         <img
         src={preview || previewUrl}
         alt="profile photo"
-        className=""
+        className="w-20 h-20 rounded-full object-cover"
         />
         <button
         type="button"
-        className=""
+        className="w-8 h-8 flex items-center bg-red-500 text-white rounded-full absolute -bottom-1 -right-1 cursor-pointer"
         onClick={handleRemoveImage}
         >
           <LuTrash/>
