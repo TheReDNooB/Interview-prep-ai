@@ -12,6 +12,28 @@ const Login = ({ setCurrentPage }) => {
   // handle login form submit
   const handleLogin = async (e) => {
     e.preventDefault();
+
+    if (!validateEmail(email)) {
+      setError("Please enter a valid email address.")
+      return;
+    }
+
+    if (!password) {
+      setError("Please enter your password.")
+      return;
+    }
+
+    setError("");
+
+    // Login Api call
+    try {
+    } catch (error) {
+      if (error.response && error.response.data.message) {
+        setError(error.response.data.message);
+      } else {
+        setError("Somenthin went wrong. Please try again later.");
+      }
+    }
   };
 
   return <div className="w-[90vw] md:w-[33vw] p-7 flex flex-col justify-center">
