@@ -49,12 +49,43 @@ const registerUser = async (req, res) => {
 // @route   POST /api/auth/login
 // @access  Public
 const loginUser = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(400).json({ message: "Invalid email or password" });
+    }
+
+    // check if password matches
+    const isPasswordMatch = await bcrypt.compare(password, user.password);
+    if (!isPasswordMatch) {
+      return res.status(400).json({ message: "Invalid email or password" })
+    }
+
+    // return user data and token
+    res.json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      profileImageUrl: user.profileImageUrl,
+      token: generateToken(user._id),
+    })
+
+  } catch (error) {
+    res.status(500).json({ message: "server error", error: error.message });
+  }
 };
 
 // @desc    get an user profile
 // @route   GET /api/auth/profile
 // @access  Private
 const getUserProfile = async (req, res) => {
+  try {
+
+  } catch (error) {
+    res.status(500).json({ message: "server error", error: error.message });
+  }
 };
 
 module.exports = { registerUser, loginUser, getUserProfile };
