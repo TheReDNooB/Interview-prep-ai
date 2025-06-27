@@ -4,7 +4,7 @@ const User = require("../models/User");
 //Middleware to protect routes
 const protect = async (req, res, next) => {
   try {
-    let token = req.header.authorization;
+    let token = req.headers.authorization;
 
     if (token && token.startsWith("Bearer")) {
       token = token.split(" ")[1]; // extract the token from the header
