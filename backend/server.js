@@ -21,7 +21,13 @@ connectDB();
 //middleware
 app.use(express.json());
 
-//route
+//routes
+app.use("/api/auth", authRoutes);
+// app.use("/api/sessions", sessionRoutes);
+// app.use("/api/questions", questionsRoutes);
+
+// app.use("/api/ai/generate-questions", project, generateInterviewQuestions);
+// app.use("/api/ai/generate-explanations", project, generateConcetpExplanations);
 
 //server uploads folder
 app.use("/uploads", express.static(path.join(__dirname, "uploads"), {}));
