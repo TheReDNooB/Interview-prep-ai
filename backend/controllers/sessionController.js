@@ -1,0 +1,42 @@
+const Session = require("../models/Session");
+const Question = require("../models/Question");
+
+// @desc    create a new session and linked questions
+// @route   POST /api/sessions/create
+// @access  Private
+exports.createSession = async (req, res) => {
+  try {
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Server Error" })
+  }
+};
+
+// @desc    get all session for the logged-in user
+// @route   GET /api/sessions/my-sessions
+// @access  Private
+exports.getMySessions = async (req, res) => {
+  try {
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Server Error" })
+  }
+};
+
+// @desc    get a session by id with populated questions
+// @route   GET /api/sessions/:id
+// @access  Private
+exports.getSessionById = async (req, res) => {
+  try {
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Server Error" })
+  }
+};
+
+// @desc    delete a session and its questions
+// @route   DELETE /api/sessions/:id
+// @access  Private
+exports.deleteSession = async (req, res) => {
+  try {
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Server Error" })
+  }
+};
