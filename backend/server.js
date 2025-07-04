@@ -3,8 +3,11 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const connectDB = require("./config/db");
+
+// importting routes
 const authRoutes = require("./routes/authRoutes");
 const sessionRoutes = require("./routes/sessionRoutes");
+const questionRoutes = require("./routes/questionRoutes");
 
 const app = express();
 
@@ -26,7 +29,7 @@ app.use(express.json());
 //routes
 app.use("/api/auth", authRoutes);
 app.use("/api/sessions", sessionRoutes);
-// app.use("/api/questions", questionsRoutes);
+app.use("/api/questions", questionRoutes);
 
 // app.use("/api/ai/generate-questions", project, generateInterviewQuestions);
 // app.use("/api/ai/generate-explanations", project, generateConcetpExplanations);
