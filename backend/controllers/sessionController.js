@@ -42,6 +42,8 @@ exports.createSession = async (req, res) => {
 // @access  Private
 exports.getMySessions = async (req, res) => {
   try {
+    const sessions = await Session.find({ user: req.userId }).sort({ createdAt: -1 }).populate("questions");
+    res.status(200).json({ success: true, sessions});
   } catch (error) {
     res.status(500).json({ success: false, message: "Server Error" })
   }
