@@ -3,9 +3,9 @@ const { conceptExplainPrompt, questionAnswerPrompt } = require("../utils/prompts
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
-// @desc    generate interview questions and answers using gemini
+// @desc   generate interview questions and answers using gemini
 // @route  POST /api/ai/generate-questions
-// @access  private
+// @access private
 const generateInterviewQuestions = async (req, res) => {
   try {
     const { role, experience, topicsToFocus, numberOfQuestions } = req.body;
@@ -16,18 +16,18 @@ const generateInterviewQuestions = async (req, res) => {
 
     const prompt = questionAnswerPrompt(role, experience, topicsToFocus, numberOfQuestions);
 
-    const reponse = await ai.models.generateContent({
+    const response = await ai.models.generateContent({
       model: "gemini-2.0-flash-lite",
       contents: prompt,
     });
 
     let rawText = response.text;
 
-    // clean it: remove ```` json and ```` from beginning and end
+    // clean it: remove ``` json and ``` from beginning and end
     const cleanedText = rawText
-    .replace(/^```json\s*/, "") // remove starting ```json
-    .replace(/```$/, "") // remove ending ````
-    .trim(); // remove extra spaces
+      .replace(/^```json\s*/, "") // remove starting ```json
+      .replace(/```$/, "") // remove ending ````
+      .trim(); // remove extra spaces
 
     // now safe to parse
     const data = JSON.parse(cleanedText);
@@ -37,9 +37,9 @@ const generateInterviewQuestions = async (req, res) => {
   }
 };
 
-// @desc    generate explains a interview question
+// @desc   generate explains a interview question
 // @route  POST /api/ai/generate-explanation
-// @access  private
+// @access private
 const generateConceptExplanations = async (req, res) => {
   try {
   } catch (error) {
